@@ -1,7 +1,6 @@
 package com.seungsu.springstudy.member;
 
 public class MemberServiceImpl implements MemberService {
-
 	private final MemberRepository memberRepository = new MemoryMemberRepository();
 	
 	@Override
@@ -13,5 +12,4 @@ public class MemberServiceImpl implements MemberService {
 	public Member findMember(Long memberId) {
 		return memberRepository.findById(memberId);
 	}
-
 }
