@@ -1,4 +1,9 @@
-package com.seungsu.springstudy.member;
+package com.seungsu.springstudy;
+
+import com.seungsu.springstudy.member.Grade;
+import com.seungsu.springstudy.member.Member;
+import com.seungsu.springstudy.member.MemberService;
+import com.seungsu.springstudy.member.MemberServiceImpl;
 
 public class MemberApp {
 
