@@ -3,12 +3,13 @@ package com.seungsu.springstudy;
 import com.seungsu.springstudy.member.Grade;
 import com.seungsu.springstudy.member.Member;
 import com.seungsu.springstudy.member.MemberService;
-import com.seungsu.springstudy.member.MemberServiceImpl;
 
 public class MemberApp {
 
 	public static void main(String[] args) {
-		MemberService memberService = new MemberServiceImpl();
+		AppConfig appConfig = new AppConfig();
+		MemberService memberService = appConfig.memberService();
+//		MemberService memberService = new MemberServiceImpl();
 		Member member = new Member(1L, "memberA", Grade.VIP);
 		memberService.join(member);
 		
