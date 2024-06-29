@@ -1,6 +1,9 @@
 package com.seungsu.springstudy;
 
+import com.seungsu.springstudy.discount.DiscountPolicy;
 import com.seungsu.springstudy.discount.FixDiscountPolicy;
+import com.seungsu.springstudy.discount.RateDiscountPolicy;
+import com.seungsu.springstudy.member.MemberRepository;
 import com.seungsu.springstudy.member.MemberService;
 import com.seungsu.springstudy.member.MemberServiceImpl;
 import com.seungsu.springstudy.member.MemoryMemberRepository;
@@ -12,7 +15,7 @@ public class AppConfig {
 		return new MemberServiceImpl(memberRepository());
 	}
 
-	private MemoryMemberRepository memberRepository() {
+	private MemberRepository memberRepository() {
 		return new MemoryMemberRepository();
 	}
 	
@@ -20,7 +23,7 @@ public class AppConfig {
 		return new OrderServiceImpl(memberRepository(), discountPolicy());
 	}
 
-	private FixDiscountPolicy discountPolicy() {
+	private DiscountPolicy discountPolicy() {
 		return new FixDiscountPolicy();
 	}
 }
